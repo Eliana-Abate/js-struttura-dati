@@ -12,10 +12,6 @@ const card = {
         expName: 'Special Expansion',
         rarity: 'gold',
     }, 
-    flavorText: {
-        quote: 'It took all...',
-        author: 'John Doe',
-    }, 
     abilities: [
         {
             manaCost: ['R', 'T'],
@@ -26,6 +22,10 @@ const card = {
             description: 'Lorem ipsum...',
         },
     ],
+    flavorText: {
+        quote: 'It took all...',
+        author: 'John Doe',
+    }, 
     collectionNumber: '177/350',
     strenght: 13,
     constitution: 13,
@@ -47,22 +47,33 @@ console.table(card);
  
 const cardSection = document.getElementById('cards'); 
 
-     //Costruzione stringhe con proprietà opzionali
+     //Costruzione stringhe per proprietà opzionali
 
      const secondaryType = card.secondaryType ? '- ${card.secondaryType}' : '';
 
 let cardFeatures = `
 <ul class = "card">
-    <li>Id: ${card.id}</li>
+    <li><strong>Id:</strong> ${card.id}</li>
     <li><strong>Card name:</strong> ${card.cardName}</li>
     <br>
 
-    <li>Throw cost: ${card.throwCost}</li>
+    <li><strong>Throw cost:</strong> ${card.throwCost}</li>
     <li>CMC <em>(Converted Mana Cost)</em>: ${card.convertedManaCost}</li>
     <br>
 
-    <li>Type Line: ${card.primaryType} ${card.secondaryType}</li>
+    <li><strong>Type Line:</strong> ${card.primaryType} ${card.secondaryType}</li>
     <br>
+
+    <li><strong>Expansion Symbol:</strong>
+        <ul>
+            <li>Edition: ${card.expansionSymbol.editionId}</li>
+            <li>Expansion Name: ${card.expansionSymbol.expName}</li>
+            <li>Rarity: ${card.expansionSymbol.rarity}</li>
+        </ul>
+    </li>
+    <br>
+
+    <li><strong>Abilities:</strong></li>
     
     
 
