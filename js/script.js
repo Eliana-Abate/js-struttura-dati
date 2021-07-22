@@ -47,6 +47,10 @@ console.table(card);
  
 const cardSection = document.getElementById('cards'); 
 
+     //Costruzione stringhe con proprietà opzionali
+
+     const secondaryType = card.secondaryType ? '- ${card.secondaryType}' : '';
+
 let cardFeatures = `
 <ul class = "card">
     <li>Id: ${card.id}</li>
@@ -57,8 +61,7 @@ let cardFeatures = `
     <li>CMC <em>(Converted Mana Cost)</em>: ${card.convertedManaCost}</li>
     <br>
 
-    <li>Type Line <em>(Basic card)</em>: ${card.primaryType}</li>
-    <li>Type Line <em>(Kind of card)</em>: ${card.secondaryType}</li>
+    <li>Type Line: ${card.primaryType} ${card.secondaryType}</li>
     <br>
     
     
