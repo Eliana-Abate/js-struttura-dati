@@ -25,7 +25,7 @@ const card = {
             manaCost: ['W', 'B', 'T'],
             description: 'Lorem ipsum...',
         },
-    ]
+    ],
     collectionNumber: '177/350',
     strenght: 13,
     constitution: 13,
@@ -38,3 +38,5 @@ const card = {
         source: 'img',
     }  
 };
+
+console.table(card);
