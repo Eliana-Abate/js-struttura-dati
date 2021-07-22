@@ -13,11 +13,14 @@ const card = {
         rarity: 'gold',
     }, 
     abilities: [
-        {manaCost: ['R', 'T'], 
-        description: 'Lorem ipsum...',
+        {
+            manaCost: ['R', 'T'], 
+            description: 'Lorem ipsum...',
         },
-        {manaCost: ['W', 'B', 'T'], 
-        description: 'Lorem ipsum...',
+        
+        {   
+            manaCost: ['W', 'B', 'T'], 
+            description: 'Lorem ipsum...',
         },
     ],
     flavorText: {
@@ -33,7 +36,7 @@ const card = {
             id: 1,
             artistName: 'Simon Bisley',
         }, 
-        source: 'img',
+        source: 'https:...',
     }  
 };
 
@@ -90,10 +93,34 @@ let cardFeatures = `
     </li>
     <br>
 
-    <li><strong>Abilities:</strong> ${abilitiesProperty}</li> //! PROBLEMA NON STAMPA L'ARRAY
-    
-    
+    <li><strong>Abilities:</strong> ${abilitiesProperty}</li>
+    <br> 
+     //! PROBLEMA 1: non legge l'array 
 
+     //! Problema 2: mi manda in tilt la formattazione della lista
+
+     //! Problema 3: vengono visualizzati i commenti
+
+    <li>Quote: ${card.flavorText.quote}</li>  
+    <li>Author: ${card.flavorText.author}</li>
+    <br>
+
+    <li>Collection Nr: ${card.collectionNumber}</li>
+    <br>
+
+    <li>Strenght / Constitution: ${card.strenght} / ${card.constitution}</li>
+    <br>
+
+    <li>Border-color: ${card.borderColor}</li>
+    <br>
+
+    <li>Illustration: 
+        <ul>
+            <li>Artist: ${card.illustration.artist.artistName}</li>
+            <li>Image source: ${card.illustration.source}</li>
+        </ul>
+    </li>
+    <br>
 </ul>
 `
 cardSection.innerHTML = cardFeatures;
