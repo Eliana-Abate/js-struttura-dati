@@ -48,13 +48,18 @@ console.table(card);
 const cardSection = document.getElementById('cards'); 
 
 let cardFeatures = `
-<ul class = card>
+<ul class = "card">
     <li>Id: ${card.id}</li>
     <li><strong>Card name:</strong> ${card.cardName}</li>
+    <br>
+
     <li>Throw cost: ${card.throwCost}</li>
     <li>CMC <em>(Converted Mana Cost)</em>: ${card.convertedManaCost}</li>
+    <br>
+
     <li>Type Line <em>(Basic card)</em>: ${card.primaryType}</li>
     <li>Type Line <em>(Kind of card)</em>: ${card.secondaryType}</li>
+    <br>
     
     
 
