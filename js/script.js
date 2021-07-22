@@ -13,13 +13,11 @@ const card = {
         rarity: 'gold',
     }, 
     abilities: [
-        {
-            manaCost: ['R', 'T'],
-            description: 'Lorem ipsum...',
+        {manaCost: ['R', 'T'], 
+        description: 'Lorem ipsum...',
         },
-        {
-            manaCost: ['W', 'B', 'T'],
-            description: 'Lorem ipsum...',
+        {manaCost: ['W', 'B', 'T'], 
+        description: 'Lorem ipsum...',
         },
     ],
     flavorText: {
@@ -53,20 +51,21 @@ const cardSection = document.getElementById('cards');
 
     //TODO Costruzione stringhe per Array
         let abilitiesProperty = 'No skills for this card.';
+        console.log(abilitiesProperty);
 
         if (card.abilities.length) {
             abilitiesProperty = '<ul>';
 
-            for(let i =0; i < card.abilities.length; i++){
+            for(let i = 0; i < card.abilities.length; i++){
                 const currentAbility = card.abilities[i];
-                abilitiesProperty += `<li>Mana cost: ${currentAbility.manaCost}</li>`;
+                abilitiesProperty += `<li>Mana Cost: ${currentAbility.manaCost}</li>`;
                 abilitiesProperty += `<li>Description: ${currentAbility.description}</li>`;
             }
 
             abilitiesProperty = '</ul>';
         }
 
-        console.log: (currentAbility);
+       
 
 
 let cardFeatures = `
@@ -91,7 +90,7 @@ let cardFeatures = `
     </li>
     <br>
 
-    <li><strong>Abilities:</strong> ${card.abilitiesProperty}</li>
+    <li><strong>Abilities:</strong> ${abilitiesProperty}</li> //! PROBLEMA NON STAMPA L'ARRAY
     
     
 
