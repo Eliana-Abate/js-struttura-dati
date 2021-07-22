@@ -52,7 +52,7 @@ const cardSection = document.getElementById('cards');
 
 
     //TODO Costruzione stringhe per Array
-        let abilitiesProperty: 'No skills for this card.';
+        let abilitiesProperty = 'No skills for this card.';
 
         if (card.abilities.length) {
             abilitiesProperty = '<ul>';
@@ -65,6 +65,8 @@ const cardSection = document.getElementById('cards');
 
             abilitiesProperty = '</ul>';
         }
+
+        console.log: (currentAbility);
 
 
 let cardFeatures = `
