@@ -59,8 +59,8 @@ const cardSection = document.getElementById('cards');
 
             for(let i =0; i < card.abilities.length; i++){
                 const currentAbility = card.abilities[i];
-                abilitiesProperty += `<li>Mana cost: ${card.currentAbility.manaCost}</li>`;
-                abilitiesProperty += `<li>Description: ${card.currentAbility.description}</li>`;
+                abilitiesProperty += `<li>Mana cost: ${currentAbility.manaCost}</li>`;
+                abilitiesProperty += `<li>Description: ${currentAbility.description}</li>`;
             }
 
             abilitiesProperty = '</ul>';
