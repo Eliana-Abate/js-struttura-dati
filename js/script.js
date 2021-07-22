@@ -4,7 +4,7 @@ const card = {
     id: 1,
     cardName: 'Bloodfire Colossus',
     throwCost: ['6', 'R', 'R'],
-    converteaManaCost: 8,
+    convertedManaCost: 8,
     primaryType: 'Creature',
     secondaryType: 'Giant',
     expansionSymbol: {
@@ -40,3 +40,24 @@ const card = {
 };
 
 console.table(card);
+
+
+
+// Stampa in HTML 
+ 
+const cardSection = document.getElementById('cards'); 
+
+let cardFeatures = `
+<ul class = card>
+    <li>Id: ${card.id}</li>
+    <li><strong>Card name:</strong> ${card.cardName}</li>
+    <li>Throw cost: ${card.throwCost}</li>
+    <li>CMC <em>(Converted Mana Cost)</em>: ${card.convertedManaCost}</li>
+    <li>Type Line <em>(Basic card)</em>: ${card.primaryType}</li>
+    <li>Type Line <em>(Kind of card)</em>: ${card.secondaryType}</li>
+    
+    
+
+</ul>
+`
+cardSection.innerHTML = cardFeatures;
