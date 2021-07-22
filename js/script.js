@@ -47,9 +47,25 @@ console.table(card);
  
 const cardSection = document.getElementById('cards'); 
 
-     //Costruzione stringhe per proprietà opzionali
+    //TODO Costruzione stringhe per proprietà opzionali
+        const secondaryType = card.secondaryType ? '- ${card.secondaryType}' : '';
 
-     const secondaryType = card.secondaryType ? '- ${card.secondaryType}' : '';
+
+    //TODO Costruzione stringhe per Array
+        let abilitiesProperty: 'No skills for this card.';
+
+        if (card.abilities.length) {
+            abilitiesProperty = '<ul>';
+
+            for(let i =0; i < card.abilities.length; i++){
+                const currentAbility = card.abilities[i];
+                abilitiesProperty += `<li>Mana cost: ${card.currentAbility.manaCost}</li>`;
+                abilitiesProperty += `<li>Description: ${card.currentAbility.description}</li>`;
+            }
+
+            abilitiesProperty = '</ul>';
+        }
+
 
 let cardFeatures = `
 <ul class = "card">
@@ -73,7 +89,7 @@ let cardFeatures = `
     </li>
     <br>
 
-    <li><strong>Abilities:</strong></li>
+    <li><strong>Abilities:</strong> ${card.abilitiesProperty}</li>
     
     
 
