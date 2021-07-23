@@ -109,16 +109,23 @@ const fullDeck = [
     },
 ];
 console.table(fullDeck);
-/*
+
 
 
 // Stampa in HTML 
  
 const cardSection = document.getElementById('cards'); 
 
-const cardFeatures = buildCardTemplate(firstCard);
+let deckTemplate = '';
 
-cardSection.innerHTML = cardFeatures;
+for(let i=0; i < fullDeck.length; i++){
+    
+    const currentCard = fullDeck[i];
+    deckTemplate += buildCardTemplate(currentCard);
+}
+
+
+cardSection.innerHTML = deckTemplate;
 
 
 //! FUNZIONI 
@@ -195,8 +202,8 @@ function buildCardTemplate (card){
   </ul>
   `
   return cardFeatures;
-}
+};
 
-*/
+
 
     
