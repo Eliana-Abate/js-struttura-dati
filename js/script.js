@@ -49,7 +49,7 @@ console.table(card);
 const cardSection = document.getElementById('cards'); 
 
     //TODO Costruzione stringhe per proprietà opzionali
-        const secondaryType = card.secondaryType ? '- ${card.secondaryType}' : '';
+        const secondaryType = card.secondaryType ? `- ${card.secondaryType}` : '';
 
 
     //TODO Costruzione stringhe per Array
@@ -60,12 +60,14 @@ const cardSection = document.getElementById('cards');
             abilitiesProperty = '<ul>';
 
             for(let i = 0; i < card.abilities.length; i++){
+                console.log('sono entrata nel for');
                 const currentAbility = card.abilities[i];
                 abilitiesProperty += `<li>Mana Cost: ${currentAbility.manaCost}</li>`;
                 abilitiesProperty += `<li>Description: ${currentAbility.description}</li>`;
+                
             }
 
-            abilitiesProperty = '</ul>';
+            abilitiesProperty += '</ul>';
         }
 
        
@@ -95,11 +97,6 @@ let cardFeatures = `
 
     <li><strong>Abilities:</strong> ${abilitiesProperty}</li>
     <br> 
-     //! PROBLEMA 1: non legge l'array 
-
-     //! Problema 2: mi manda in tilt la formattazione della lista
-
-     //! Problema 3: vengono visualizzati i commenti
 
     <li>Quote: ${card.flavorText.quote}</li>  
     <li>Author: ${card.flavorText.author}</li>
