@@ -85,12 +85,7 @@ const fullDeck = [
             expName: 'Special Expansion',
             rarity: 'silver',
         }, 
-        abilities: [
-            {
-                manaCost: ['W', 'T'], 
-                description: 'Lorem ipsum...',
-            },
-        ],
+        abilities: [],
         flavorText: {
             quote: 'We do...',
             author: 'Kasla',
@@ -112,24 +107,10 @@ console.table(fullDeck);
 
 
 
-// Stampa in HTML 
- 
-const cardSection = document.getElementById('cards'); 
-
-let deckTemplate = '';
-
-for(let i=0; i < fullDeck.length; i++){
-    
-    const currentCard = fullDeck[i];
-    deckTemplate += buildCardTemplate(currentCard);
-}
-
-
-cardSection.innerHTML = deckTemplate;
-
 
 //! FUNZIONI 
 
+//1. Stampo template singola carta
 function buildCardTemplate (card){
       //TODO Costruzione stringhe per proprietà opzionali
       const secondaryType = card.secondaryType ? `- ${card.secondaryType}` : '';
@@ -143,7 +124,7 @@ function buildCardTemplate (card){
               abilitiesProperty = '<ul>';
   
               for(let i = 0; i < card.abilities.length; i++){
-                  console.log('sono entrata nel for');
+                 
                   const currentAbility = card.abilities[i];
                   abilitiesProperty += `<li>Mana Cost: ${currentAbility.manaCost}</li>`;
                   abilitiesProperty += `<li>Description: ${currentAbility.description}</li>`;
@@ -203,6 +184,30 @@ function buildCardTemplate (card){
   `
   return cardFeatures;
 };
+
+
+//2. Stampo deck
+
+const renderDeck = (deck, targetElement) => {
+
+    const cardSection = document.getElementById('cards'); 
+
+    let deckTemplate = '';
+
+    for(let i = 0; i < deck.length; i++){
+    
+        const currentCard = deck[i];
+        deckTemplate += buildCardTemplate(currentCard);
+    }
+
+
+    cardSection.innerHTML = deckTemplate;
+
+};
+
+
+// Stampa in HTML 
+renderDeck(fullDeck);
 
 
 
