@@ -187,10 +187,9 @@ function buildCardTemplate (card){
 
 
 //2. Stampo deck
+const targetElement = document.getElementById('cards');  
 
 const renderDeck = (deck, targetElement) => {
-
-    const cardSection = document.getElementById('cards'); 
 
     let deckTemplate = '';
 
@@ -201,8 +200,7 @@ const renderDeck = (deck, targetElement) => {
     }
 
 
-    cardSection.innerHTML = deckTemplate;
-
+    targetElement.innerHTML = deckTemplate;
 };
 
 
