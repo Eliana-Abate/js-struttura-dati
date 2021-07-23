@@ -1,124 +1,115 @@
-// Oggetto Card
+// Array di oggetti (carte)
 
-const firstCard = {
-    id: 1,
-    cardName: 'Bloodfire Colossus',
-    throwCost: ['6', 'R', 'R'],
-    convertedManaCost: 8,
-    primaryType: 'Creature',
-    secondaryType: 'Giant',
-    expansionSymbol: {
-        editionId: 9,
-        expName: 'Special Expansion',
-        rarity: 'gold',
-    }, 
-    abilities: [
-        {
-            manaCost: ['R', 'T'], 
-            description: 'Lorem ipsum...',
-        },
-        
-        {   
-            manaCost: ['W', 'B', 'T'], 
-            description: 'Lorem ipsum...',
-        },
-    ],
-    flavorText: {
-        quote: 'It took all...',
-        author: 'John Doe',
-    }, 
-    collectionNumber: '177/350',
-    strenght: 13,
-    constitution: 13,
-    borderColor: '#000',
-    illustration: {
-        artist: {
-            id: 1,
-            artistName: 'Simon Bisley',
+const fullDeck = [
+    {
+        id: 1,
+        cardName: 'Bloodfire Colossus',
+        throwCost: ['6', 'R', 'R'],
+        convertedManaCost: 8,
+        primaryType: 'Creature',
+        secondaryType: 'Giant',
+        expansionSymbol: {
+            editionId: 9,
+            expName: 'Special Expansion',
+            rarity: 'gold',
         }, 
-        source: 'https:...',
-    }  
-};
-
-console.table(firstCard);
-
-
-const secondCard = {
-    id: 2,
-    cardName: 'Daybreak Ranger',
-    throwCost: ['2', 'G'],
-    convertedManaCost: 3,
-    primaryType: 'Creature',
-    secondaryType: 'Human Archer',
-    expansionSymbol: {
-        editionId: 5,
-        expName: 'Normal Expansion',
-        rarity: 'common',
-    }, 
-    abilities: [
-        {
-            manaCost: ['G', 'T'], 
-            description: 'Lorem ipsum...',
-        },
-    ],
-    flavorText: {
-        quote: 'At the beginning...',
-        author: 'John Doe',
-    }, 
-    collectionNumber: '29/270',
-    strenght: 2,
-    constitution: 2,
-    borderColor: '#000',
-    illustration: {
-        artist: {
-            id: 2,
-            artistName: 'Steve Prescott',
+        abilities: [
+            {
+                manaCost: ['R', 'T'], 
+                description: 'Lorem ipsum...',
+            },
+            
+            {   
+                manaCost: ['W', 'B', 'T'], 
+                description: 'Lorem ipsum...',
+            },
+        ],
+        flavorText: {
+            quote: 'It took all...',
+            author: 'John Doe',
         }, 
-        source: 'https:...',
-    }  
-};
-
-console.table(secondCard);
-
-
-
-
-const thirdCard = {
-    id: 3,
-    cardName: 'Emeria\'s Call',
-    throwCost: ['4', 'W', 'W', 'W'],
-    convertedManaCost: 7,
-    primaryType: 'Sorcery',
-    expansionSymbol: {
-        editionId: 8,
-        expName: 'Special Expansion',
-        rarity: 'silver',
-    }, 
-    abilities: [
-        {
-            manaCost: ['W', 'T'], 
-            description: 'Lorem ipsum...',
-        },
-    ],
-    flavorText: {
-        quote: 'We do...',
-        author: 'Kasla',
-    }, 
-    collectionNumber: '121/280',
-    strenght: 3,
-    constitution: 3,
-    borderColor: '#fff',
-    illustration: {
-        artist: {
-            id: 3,
-            artistName: 'Neil Hamn',
+        collectionNumber: '177/350',
+        strenght: 13,
+        constitution: 13,
+        borderColor: '#000',
+        illustration: {
+            artist: {
+                id: 1,
+                artistName: 'Simon Bisley',
+            }, 
+            source: 'https:...',
+        }  
+    },
+    {
+        id: 2,
+        cardName: 'Daybreak Ranger',
+        throwCost: ['2', 'G'],
+        convertedManaCost: 3,
+        primaryType: 'Creature',
+        secondaryType: 'Human Archer',
+        expansionSymbol: {
+            editionId: 5,
+            expName: 'Normal Expansion',
+            rarity: 'common',
         }, 
-        source: 'https:...',
-    }  
-};
-
-console.table(thirdCard);
-
+        abilities: [
+            {
+                manaCost: ['G', 'T'], 
+                description: 'Lorem ipsum...',
+            },
+        ],
+        flavorText: {
+            quote: 'At the beginning...',
+            author: 'John Doe',
+        }, 
+        collectionNumber: '29/270',
+        strenght: 2,
+        constitution: 2,
+        borderColor: '#000',
+        illustration: {
+            artist: {
+                id: 2,
+                artistName: 'Steve Prescott',
+            }, 
+            source: 'https:...',
+        }  
+    },
+    {
+        id: 3,
+        cardName: 'Emeria\'s Call',
+        throwCost: ['4', 'W', 'W', 'W'],
+        convertedManaCost: 7,
+        primaryType: 'Sorcery',
+        expansionSymbol: {
+            editionId: 8,
+            expName: 'Special Expansion',
+            rarity: 'silver',
+        }, 
+        abilities: [
+            {
+                manaCost: ['W', 'T'], 
+                description: 'Lorem ipsum...',
+            },
+        ],
+        flavorText: {
+            quote: 'We do...',
+            author: 'Kasla',
+        }, 
+        collectionNumber: '121/280',
+        strenght: 3,
+        constitution: 3,
+        borderColor: '#fff',
+        illustration: {
+            artist: {
+                id: 3,
+                artistName: 'Neil Hamn',
+            }, 
+            source: 'https:...',
+        }  
+    },
+];
+console.table(fullDeck);
+/*
 
 
 // Stampa in HTML 
@@ -206,6 +197,6 @@ function buildCardTemplate (card){
   return cardFeatures;
 }
 
-
+*/
 
     
