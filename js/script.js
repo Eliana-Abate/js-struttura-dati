@@ -31,13 +31,13 @@ const fullDeck = [
         collectionNumber: '177/350',
         strenght: 13,
         constitution: 13,
-        borderColor: '#000',
+        borderColor: '#b42121',
         illustration: {
             artist: {
                 id: 1,
                 artistName: 'Simon Bisley',
             }, 
-            source: 'https:...',
+            source: '',
         }  
     },
     {
@@ -65,13 +65,13 @@ const fullDeck = [
         collectionNumber: '29/270',
         strenght: 2,
         constitution: 2,
-        borderColor: '#000',
+        borderColor: '#057d3a',
         illustration: {
             artist: {
                 id: 2,
                 artistName: 'Steve Prescott',
             }, 
-            source: 'https:...',
+            source: '',
         }  
     },
     {
@@ -93,7 +93,7 @@ const fullDeck = [
         collectionNumber: '121/280',
         strenght: 3,
         constitution: 3,
-        borderColor: '#fff',
+        borderColor: '#000',
         illustration: {
             artist: {
                 id: 3,
@@ -136,60 +136,64 @@ function buildCardTemplate (card){
   
          
   let cardFeatures = `
-  <ul class = "card">
-      <li><strong>Id:</strong> ${card.id}</li>
-      <li><strong>Card name:</strong> ${card.cardName}</li>
-      <br>
-  
-      <li><strong>Throw cost:</strong> ${card.throwCost}</li>
-      <li>CMC <em>(Converted Mana Cost)</em>: ${card.convertedManaCost}</li>
-      <br>
-  
-      <li><strong>Type Line:</strong> ${card.primaryType} ${card.secondaryType}</li>
-      <br>
-  
-      <li><strong>Expansion Symbol:</strong>
-          <ul>
-              <li>Edition: ${card.expansionSymbol.editionId}</li>
-              <li>Expansion Name: ${card.expansionSymbol.expName}</li>
-              <li>Rarity: ${card.expansionSymbol.rarity}</li>
-          </ul>
-      </li>
-      <br>
-  
-      <li><strong>Abilities:</strong> ${abilitiesProperty}</li>
-      <br> 
-  
-      <li>Quote: ${card.flavorText.quote}</li>  
-      <li>Author: ${card.flavorText.author}</li>
-      <br>
-  
-      <li>Collection Nr: ${card.collectionNumber}</li>
-      <br>
-  
-      <li>Strenght / Constitution: ${card.strenght} / ${card.constitution}</li>
-      <br>
-  
-      <li>Border-color: ${card.borderColor}</li>
-      <br>
-  
-      <li>Illustration: 
-          <ul>
-              <li>Artist: ${card.illustration.artist.artistName}</li>
-              <li>Image source: ${card.illustration.source}</li>
-          </ul>
-      </li>
-      <br>
-  </ul>
+  <div class = "cards" style = 'border: 5px solid ${card.borderColor};'>
+    <ul>
+    <li><strong>Id:</strong> ${card.id}</li>
+    <li><strong>Card name:</strong> ${card.cardName}</li>
+    <br>
+
+    <li><strong>Throw cost:</strong> ${card.throwCost}</li>
+    <li>CMC <em>(Converted Mana Cost)</em>: ${card.convertedManaCost}</li>
+    <br>
+
+    <li><strong>Type Line:</strong> ${card.primaryType} ${card.secondaryType}</li>
+    <br>
+
+    <li><strong>Expansion Symbol:</strong>
+        <ul>
+            <li>Edition: ${card.expansionSymbol.editionId}</li>
+            <li>Expansion Name: ${card.expansionSymbol.expName}</li>
+            <li>Rarity: ${card.expansionSymbol.rarity}</li>
+        </ul>
+    </li>
+    <br>
+
+    <li><strong>Abilities:</strong> ${abilitiesProperty}</li>
+    <br> 
+
+    <li>Quote: ${card.flavorText.quote}</li>  
+    <li>Author: ${card.flavorText.author}</li>
+    <br>
+
+    <li>Collection Nr: ${card.collectionNumber}</li>
+    <br>
+
+    <li>Strenght / Constitution: ${card.strenght} / ${card.constitution}</li>
+    <br>
+
+    <li>Border-color: ${card.borderColor}</li>
+    <br>
+
+    <li>Illustration: 
+        <ul>
+            <li>Artist: ${card.illustration.artist.artistName}</li>
+            <li>Image source: ${card.illustration.source}</li>
+            <li><img src="./img/${card.illustration.source}"></li>
+        </ul>
+    </li>
+    <br>
+    </ul>
+  </div>
   `
   return cardFeatures;
 };
 
 
 //2. Stampo deck
-const targetElement = document.getElementById('cards');  
+const targetElement = document.getElementById('cards'); 
 
 const renderDeck = (deck, targetElement) => {
+
 
     let deckTemplate = '';
 
@@ -201,11 +205,12 @@ const renderDeck = (deck, targetElement) => {
 
 
     targetElement.innerHTML = deckTemplate;
+
 };
 
 
 // Stampa in HTML 
-renderDeck(fullDeck);
+renderDeck(fullDeck, targetElement);
 
 
 
