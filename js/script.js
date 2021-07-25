@@ -243,8 +243,23 @@ button.addEventListener('click', () => {
 
     for (let i = 0; i < fullDeck.length; i++) {
         const currentCard = fullDeck[i];
-        if (currentCard[selectValue] == inputValue) {
-            checkFullDeck.push(currentCard);
+
+
+        switch(selectValue){
+            case 'id':
+            case 'convertedManaCost':
+            case 'strenght':
+            case 'constitution':
+                if (currentCard[selectValue] == inputValue){
+                    checkFullDeck.push(currentCard);
+                }
+                break;
+
+            default:
+                if (currentCard[selectValue].includes(inputValue)){
+                    checkFullDeck.push(currentCard);
+                }  
+
         }
     }
 
