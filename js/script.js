@@ -225,6 +225,6 @@ selectField.addEventListener('change', () => {
     if (currentValue !== 'all') {
         inputField.classList.remove('hidden');
     } else {
-        inputField.classList.remove('hidden');
+        inputField.classList.add('hidden');
     }
 });
