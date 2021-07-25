@@ -37,7 +37,7 @@ const fullDeck = [
                 id: 1,
                 artistName: 'Simon Bisley',
             }, 
-            source: '',
+            source: 'https...',
         }  
     },
     {
@@ -71,7 +71,7 @@ const fullDeck = [
                 id: 2,
                 artistName: 'Steve Prescott',
             }, 
-            source: '',
+            source: 'https...',
         }  
     },
     {
@@ -118,7 +118,7 @@ function buildCardTemplate (card){
 
       //TODO Costruzione stringhe per Array
         let abilitiesProperty = 'No skills for this card.';
-        console.log(abilitiesProperty);
+        
   
         if (card.abilities.length) {
             abilitiesProperty = '<ul>';
@@ -178,7 +178,6 @@ function buildCardTemplate (card){
         <ul>
             <li>Artist: ${card.illustration.artist.artistName}</li>
             <li>Image source: ${card.illustration.source}</li>
-            <li><img src="./img/${card.illustration.source}"></li>
         </ul>
     </li>
     <br>
