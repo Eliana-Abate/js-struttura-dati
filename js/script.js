@@ -239,4 +239,16 @@ button.addEventListener('click', () => {
         return;
     }
 
+
+    const checkFullDeck = [];
+
+    for (let i = 0; i < fullDeck.length; i++) {
+        const currentCard = fullDeck[i];
+        if (currentCard[selectValue] == inputValue) {
+            checkFullDeck.push(currentCard);
+        }
+    }
+
+
+    renderDeck(checkFullDeck, cardSection);
 });
