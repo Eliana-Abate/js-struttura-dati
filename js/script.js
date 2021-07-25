@@ -228,3 +228,15 @@ selectField.addEventListener('change', () => {
         inputField.classList.add('hidden');
     }
 });
+
+
+button.addEventListener('click', () => {
+    const inputValue = inputField.value;
+    const selectValue = selectField.value;
+
+    if (selectValue === 'all') {
+        renderDeck(fullDeck, cardSection);
+        return;
+    }
+
+});
