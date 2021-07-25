@@ -117,22 +117,22 @@ function buildCardTemplate (card){
 
 
       //TODO Costruzione stringhe per Array
-          let abilitiesProperty = 'No skills for this card.';
-          console.log(abilitiesProperty);
+        let abilitiesProperty = 'No skills for this card.';
+        console.log(abilitiesProperty);
   
-          if (card.abilities.length) {
-              abilitiesProperty = '<ul>';
+        if (card.abilities.length) {
+            abilitiesProperty = '<ul>';
   
-              for(let i = 0; i < card.abilities.length; i++){
+            for(let i = 0; i < card.abilities.length; i++){
                  
-                  const currentAbility = card.abilities[i];
-                  abilitiesProperty += `<li>Mana Cost: ${currentAbility.manaCost}</li>`;
-                  abilitiesProperty += `<li>Description: ${currentAbility.description}</li>`;
+                const currentAbility = card.abilities[i];
+                abilitiesProperty += `<li>Mana Cost: ${currentAbility.manaCost}</li>`;
+                abilitiesProperty += `<li>Description: ${currentAbility.description}</li>`;
                   
-              }
+            }
   
-              abilitiesProperty += '</ul>';
-          }
+            abilitiesProperty += '</ul>';
+        }
   
          
   let cardFeatures = `
@@ -190,10 +190,9 @@ function buildCardTemplate (card){
 
 
 //2. Stampo deck
-const targetElement = document.getElementById('cards'); 
+const cardSection = document.getElementById('cards'); 
 
 const renderDeck = (deck, targetElement) => {
-
 
     let deckTemplate = '';
 
@@ -210,8 +209,22 @@ const renderDeck = (deck, targetElement) => {
 
 
 // Stampa in HTML 
-renderDeck(fullDeck, targetElement);
+renderDeck(fullDeck, cardSection);
 
 
+//Variabili per i campi del form
+const inputField = document.getElementById('search');
+const selectField = document.getElementById('filter');
+const button = document.getElementById('filter-btn');
 
-    
+
+//Eventi 
+selectField.addEventListener('change', () => {
+    const currentValue = selectField.value;
+
+    if (currentValue !== 'all') {
+        inputField.classList.remove('hidden');
+    } else {
+        inputField.classList.remove('hidden');
+    }
+});
